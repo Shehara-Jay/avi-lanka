@@ -48,7 +48,7 @@ export default function Hero() {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-[125vh] overflow-hidden bg-[#fafaf7]"
+      className="relative min-h-[110vh] overflow-hidden bg-[#fafaf7]"
     >
       {/* =========================================
           STICKY HERO
