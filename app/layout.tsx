@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Navbar from "@/components/layout/Navbar";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -7,7 +8,7 @@ export const metadata: Metadata = {
     template: "%s | Avi Lanka",
   },
   description:
-    "Discover Sri Lanka with private tours, authentic experiences, and tailor-made journeys.",
+    "Discover Sri Lanka through private journeys, authentic experiences and tailor-made adventures.",
 };
 
 export default function RootLayout({
@@ -17,7 +18,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }
