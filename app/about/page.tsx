@@ -45,43 +45,111 @@ export default function AboutPage() {
   return (
     <main className="bg-[#fbfcf8]">
       {/* ========================================
-          HERO
+          IMAGE-FREE HERO
       ========================================= */}
 
-      <section className="relative min-h-[72svh] overflow-hidden">
-        <img
-          src="/images/about/about-hero.jpg"
-          alt="Travel through Sri Lanka with Avi Lanka"
-          className="absolute inset-0 h-full w-full object-cover"
-        />
+      <section className="relative overflow-hidden bg-[#eef5ea] pt-32 md:pt-36">
+        {/* DECORATIVE BACKGROUND */}
 
-        <div className="absolute inset-0 bg-gradient-to-r from-black/65 via-black/30 to-black/5" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent" />
+        <div className="pointer-events-none absolute left-[-170px] top-[-170px] h-[470px] w-[470px] rounded-full bg-[#90EE90]/20 blur-[110px]" />
 
-        <div className="relative z-10 mx-auto flex min-h-[72svh] max-w-[1540px] items-end px-6 pb-14 pt-32 md:px-10 md:pb-16 lg:px-16">
-          <div className="max-w-[800px]">
-            <div className="mb-4 flex items-center gap-3">
-              <span className="h-[2px] w-7 bg-[#90EE90]" />
+        <div className="pointer-events-none absolute bottom-[-190px] right-[-120px] h-[470px] w-[470px] rounded-full bg-[#008000]/[0.06] blur-[120px]" />
 
-              <p className="text-[9px] font-semibold uppercase tracking-[0.3em] text-[#BDF5B5]">
-                About Avi Lanka
+        <div className="pointer-events-none absolute right-[12%] top-[22%] hidden h-24 w-24 rounded-full border border-[#008000]/10 lg:block" />
+
+        <div className="pointer-events-none absolute right-[18%] top-[30%] hidden h-3 w-3 rounded-full bg-[#90EE90] lg:block" />
+
+        <div className="mx-auto max-w-[1540px] px-6 pb-16 md:px-10 md:pb-20 lg:px-16">
+          <div className="grid gap-10 lg:grid-cols-[1fr_420px] lg:items-end">
+            {/* LEFT */}
+
+            <div>
+              <div className="flex items-center gap-3">
+                <span className="h-[2px] w-8 bg-[#90EE90]" />
+
+                <p className="text-[9px] font-semibold uppercase tracking-[0.3em] text-[#008000]">
+                  About Avi Lanka
+                </p>
+              </div>
+
+              <h1 className="mt-5 max-w-[900px] text-[clamp(3.5rem,6vw,6.5rem)] font-semibold leading-[0.9] tracking-[-0.055em] text-[#182018]">
+                Sri Lanka,
+                <br />
+
+                <span className="font-medium italic text-[#008000]">
+                  made personal.
+                </span>
+              </h1>
+
+              <p className="mt-6 max-w-[650px] text-[15px] leading-7 text-black/50">
+                We help travelers discover Sri Lanka through flexible journeys,
+                trusted local support and experiences built around the way they
+                want to travel.
               </p>
             </div>
 
-            <h1 className="text-[clamp(3.5rem,6vw,6.5rem)] font-semibold leading-[0.92] tracking-[-0.055em] text-white">
-              Sri Lanka,
-              <br />
+            {/* HERO SUMMARY */}
 
-              <span className="font-medium italic text-[#DDF7D7]">
-                made personal.
-              </span>
-            </h1>
+            <div className="rounded-[24px] border border-black/[0.06] bg-white/75 p-5 backdrop-blur-sm">
+              <p className="text-[8px] font-semibold uppercase tracking-[0.25em] text-black/35">
+                Travel with Avi Lanka
+              </p>
 
-            <p className="mt-5 max-w-[560px] text-[14px] leading-6 text-white/75">
-              We help travelers discover Sri Lanka through flexible journeys,
-              trusted local support and experiences built around the way they
-              want to travel.
-            </p>
+              <h2 className="mt-4 text-[1.7rem] font-semibold leading-[1.05] tracking-[-0.04em] text-[#182018]">
+                Local knowledge.
+                <br />
+                Personal journeys.
+              </h2>
+
+              <p className="mt-4 text-[11px] leading-5 text-black/45">
+                We combine local knowledge, flexible planning and direct
+                support to help you experience Sri Lanka in your own way.
+              </p>
+
+              <div className="mt-5 grid grid-cols-3 gap-2 border-t border-black/[0.07] pt-5">
+                <div>
+                  <p className="text-[1.25rem] font-semibold tracking-[-0.04em] text-[#008000]">
+                    Local
+                  </p>
+
+                  <p className="mt-1 text-[8px] uppercase tracking-[0.18em] text-black/35">
+                    Knowledge
+                  </p>
+                </div>
+
+                <div>
+                  <p className="text-[1.25rem] font-semibold tracking-[-0.04em] text-[#008000]">
+                    Private
+                  </p>
+
+                  <p className="mt-1 text-[8px] uppercase tracking-[0.18em] text-black/35">
+                    Travel
+                  </p>
+                </div>
+
+                <div>
+                  <p className="text-[1.25rem] font-semibold tracking-[-0.04em] text-[#008000]">
+                    Flexible
+                  </p>
+
+                  <p className="mt-1 text-[8px] uppercase tracking-[0.18em] text-black/35">
+                    Planning
+                  </p>
+                </div>
+              </div>
+
+              <Link
+                href="/booking"
+                className="group mt-6 inline-flex items-center gap-2 text-[10px] font-semibold text-[#008000]"
+              >
+                Plan your journey
+
+                <ArrowRight
+                  size={12}
+                  className="transition-transform duration-300 group-hover:translate-x-1"
+                />
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -92,8 +160,6 @@ export default function AboutPage() {
 
       <section className="py-20 md:py-24">
         <div className="mx-auto grid max-w-[1540px] gap-12 px-6 md:px-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20 lg:px-16">
-          {/* LEFT */}
-
           <div>
             <div className="flex items-center gap-3">
               <span className="h-px w-7 bg-[#90EE90]" />
@@ -112,8 +178,6 @@ export default function AboutPage() {
               </span>
             </h2>
           </div>
-
-          {/* RIGHT */}
 
           <div className="max-w-[700px]">
             <p className="text-[16px] leading-8 text-[#263026]">
@@ -161,8 +225,6 @@ export default function AboutPage() {
       <section className="pb-20 md:pb-24">
         <div className="mx-auto max-w-[1540px] px-6 md:px-10 lg:px-16">
           <div className="grid gap-4 md:grid-cols-[1.35fr_0.65fr]">
-            {/* LARGE IMAGE */}
-
             <div className="group relative min-h-[440px] overflow-hidden rounded-[26px] md:min-h-[600px]">
               <img
                 src="/images/about/about-main.jpg"
@@ -184,8 +246,6 @@ export default function AboutPage() {
                 </h3>
               </div>
             </div>
-
-            {/* RIGHT COLUMN */}
 
             <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-1">
               <div className="group relative min-h-[260px] overflow-hidden rounded-[26px]">
@@ -238,8 +298,6 @@ export default function AboutPage() {
 
       <section className="bg-[#102719] py-20 text-white md:py-24">
         <div className="mx-auto max-w-[1540px] px-6 md:px-10 lg:px-16">
-          {/* HEADER */}
-
           <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
             <div>
               <p className="text-[9px] font-semibold uppercase tracking-[0.3em] text-[#BDF5B5]">
@@ -262,8 +320,6 @@ export default function AboutPage() {
               feel like your own.
             </p>
           </div>
-
-          {/* VALUES */}
 
           <div className="mt-12 grid gap-4 md:grid-cols-3">
             {values.map((value) => {
@@ -304,8 +360,6 @@ export default function AboutPage() {
 
       <section className="py-20 md:py-24">
         <div className="mx-auto grid max-w-[1540px] gap-12 px-6 md:px-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20 lg:px-16">
-          {/* LEFT */}
-
           <div>
             <div className="flex items-center gap-3">
               <ShieldCheck size={15} className="text-[#008000]" />
@@ -330,8 +384,6 @@ export default function AboutPage() {
               enjoy the experience.
             </p>
           </div>
-
-          {/* RIGHT */}
 
           <div className="border-t border-black/[0.08]">
             {reasons.map((reason, index) => (
@@ -358,15 +410,13 @@ export default function AboutPage() {
       </section>
 
       {/* ========================================
-          PEOPLE / PERSONAL SUPPORT
+          PERSONAL SUPPORT
       ========================================= */}
 
       <section className="pb-20 md:pb-24">
         <div className="mx-auto max-w-[1540px] px-6 md:px-10 lg:px-16">
           <div className="overflow-hidden rounded-[28px] bg-[#eef5ea]">
             <div className="grid lg:grid-cols-2">
-              {/* CONTENT */}
-
               <div className="flex flex-col justify-center p-7 md:p-10 lg:p-12">
                 <div className="flex items-center gap-3">
                   <Users size={15} className="text-[#008000]" />
@@ -403,8 +453,6 @@ export default function AboutPage() {
                   />
                 </Link>
               </div>
-
-              {/* IMAGE */}
 
               <div className="relative min-h-[380px] overflow-hidden lg:min-h-[500px]">
                 <img

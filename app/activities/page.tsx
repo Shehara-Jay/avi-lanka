@@ -32,43 +32,111 @@ export default function ActivitiesPage() {
   return (
     <main className="bg-[#fbfcf8]">
       {/* ========================================
-          HERO
+          IMAGE-FREE HERO
       ========================================= */}
 
-      <section className="relative min-h-[72svh] overflow-hidden">
-        <img
-          src="/images/activities/surfing.jpg"
-          alt="Activities in Sri Lanka"
-          className="absolute inset-0 h-full w-full object-cover"
-        />
+      <section className="relative overflow-hidden bg-[#eef5ea] pt-32 md:pt-36">
+        {/* DECORATIVE BACKGROUND */}
 
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/35 to-black/5" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+        <div className="pointer-events-none absolute left-[-170px] top-[-170px] h-[470px] w-[470px] rounded-full bg-[#90EE90]/20 blur-[110px]" />
 
-        <div className="relative z-10 mx-auto flex min-h-[72svh] max-w-[1540px] items-end px-6 pb-14 pt-32 md:px-10 md:pb-16 lg:px-16">
-          <div className="max-w-[820px]">
-            <div className="mb-4 flex items-center gap-3">
-              <span className="h-[2px] w-7 bg-[#90EE90]" />
+        <div className="pointer-events-none absolute bottom-[-190px] right-[-120px] h-[470px] w-[470px] rounded-full bg-[#008000]/[0.06] blur-[120px]" />
 
-              <p className="text-[9px] font-semibold uppercase tracking-[0.3em] text-[#BDF5B5]">
-                Things to do
+        <div className="pointer-events-none absolute right-[12%] top-[22%] hidden h-24 w-24 rounded-full border border-[#008000]/10 lg:block" />
+
+        <div className="pointer-events-none absolute right-[18%] top-[30%] hidden h-3 w-3 rounded-full bg-[#90EE90] lg:block" />
+
+        <div className="mx-auto max-w-[1540px] px-6 pb-16 md:px-10 md:pb-20 lg:px-16">
+          <div className="grid gap-10 lg:grid-cols-[1fr_420px] lg:items-end">
+            {/* LEFT */}
+
+            <div>
+              <div className="flex items-center gap-3">
+                <span className="h-[2px] w-8 bg-[#90EE90]" />
+
+                <p className="text-[9px] font-semibold uppercase tracking-[0.3em] text-[#008000]">
+                  Things to do
+                </p>
+              </div>
+
+              <h1 className="mt-5 max-w-[900px] text-[clamp(3.5rem,6vw,6.5rem)] font-semibold leading-[0.9] tracking-[-0.055em] text-[#182018]">
+                Experience more
+                <br />
+
+                <span className="font-medium italic text-[#008000]">
+                  of Sri Lanka.
+                </span>
+              </h1>
+
+              <p className="mt-6 max-w-[650px] text-[15px] leading-7 text-black/50">
+                From ocean adventures and wildlife encounters to tea country,
+                wellness and local traditions, discover experiences that make
+                your journey unforgettable.
               </p>
             </div>
 
-            <h1 className="text-[clamp(3.5rem,6vw,6.5rem)] font-semibold leading-[0.92] tracking-[-0.055em] text-white">
-              Experience more
-              <br />
+            {/* HERO SUMMARY */}
 
-              <span className="font-medium italic text-[#DDF7D7]">
-                of Sri Lanka.
-              </span>
-            </h1>
+            <div className="rounded-[24px] border border-black/[0.06] bg-white/75 p-5 backdrop-blur-sm">
+              <p className="text-[8px] font-semibold uppercase tracking-[0.25em] text-black/35">
+                Experiences
+              </p>
 
-            <p className="mt-5 max-w-[570px] text-[14px] leading-6 text-white/75">
-              From ocean adventures and wildlife encounters to tea country,
-              wellness and local traditions, discover experiences that make
-              your journey unforgettable.
-            </p>
+              <h2 className="mt-4 text-[1.7rem] font-semibold leading-[1.05] tracking-[-0.04em] text-[#182018]">
+                More than places.
+                <br />
+                Make memories.
+              </h2>
+
+              <p className="mt-4 text-[11px] leading-5 text-black/45">
+                Add activities to your itinerary depending on your interests,
+                destination and the kind of Sri Lankan experience you want.
+              </p>
+
+              <div className="mt-5 grid grid-cols-3 gap-2 border-t border-black/[0.07] pt-5">
+                <div>
+                  <p className="text-[1.4rem] font-semibold tracking-[-0.04em] text-[#008000]">
+                    {activities.length}
+                  </p>
+
+                  <p className="mt-1 text-[8px] uppercase tracking-[0.18em] text-black/35">
+                    Activities
+                  </p>
+                </div>
+
+                <div>
+                  <p className="text-[1.4rem] font-semibold tracking-[-0.04em] text-[#008000]">
+                    5
+                  </p>
+
+                  <p className="mt-1 text-[8px] uppercase tracking-[0.18em] text-black/35">
+                    Categories
+                  </p>
+                </div>
+
+                <div>
+                  <p className="text-[1.4rem] font-semibold tracking-[-0.04em] text-[#008000]">
+                    Local
+                  </p>
+
+                  <p className="mt-1 text-[8px] uppercase tracking-[0.18em] text-black/35">
+                    Experiences
+                  </p>
+                </div>
+              </div>
+
+              <Link
+                href="/booking?type=activity"
+                className="group mt-6 inline-flex items-center gap-2 text-[10px] font-semibold text-[#008000]"
+              >
+                Plan an experience
+
+                <ArrowRight
+                  size={12}
+                  className="transition-transform duration-300 group-hover:translate-x-1"
+                />
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -172,10 +240,7 @@ export default function ActivitiesPage() {
 
                   <div className="flex flex-1 flex-col p-5">
                     <div className="flex items-center gap-2">
-                      <MapPin
-                        size={10}
-                        className="text-[#008000]"
-                      />
+                      <MapPin size={10} className="text-[#008000]" />
 
                       <span className="text-[8px] uppercase tracking-[0.18em] text-black/40">
                         {activity.location}
@@ -292,17 +357,17 @@ export default function ActivitiesPage() {
               </div>
             </div>
 
-            <a
-              href="#"
+            <Link
+              href="/booking?type=activity"
               className="group flex w-fit shrink-0 items-center gap-3 rounded-full bg-[#008000] px-6 py-3 text-[10px] font-semibold text-white transition-all duration-300 hover:-translate-y-[2px] hover:bg-[#169b16]"
             >
-              Contact us
+              Send inquiry
 
               <ArrowRight
                 size={12}
                 className="transition-transform duration-300 group-hover:translate-x-1"
               />
-            </a>
+            </Link>
           </div>
         </div>
       </section>
