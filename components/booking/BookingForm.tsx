@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 import {
   FormEvent,
   useState,
@@ -694,6 +696,8 @@ export default function BookingForm({
             </div>
           </div>
 
+          {/* CONTACT CARD */}
+
           <div className="rounded-[22px] border border-black/[0.07] bg-white p-5">
             <div className="flex items-start gap-3">
               <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#eef7ea] text-[#008000]">
@@ -706,15 +710,16 @@ export default function BookingForm({
                 </h3>
 
                 <p className="mt-1 text-[11px] leading-5 text-black/45">
-                  You can also contact Avi Lanka directly through WhatsApp.
+                  You can also contact Avi Lanka directly if you need help with
+                  your inquiry.
                 </p>
 
-                <a
-                  href="#"
-                  className="mt-4 inline-block text-[10px] font-semibold text-[#008000]"
+                <Link
+                  href="/contact"
+                  className="mt-4 inline-block text-[10px] font-semibold text-[#008000] transition-colors duration-300 hover:text-[#169b16]"
                 >
-                  Chat on WhatsApp →
-                </a>
+                  Contact us →
+                </Link>
               </div>
             </div>
           </div>
