@@ -4,74 +4,25 @@ import {
   Car,
   Languages,
   Map,
+  MessageCircle,
   Route,
   UserRound,
-  MessageCircle,
 } from "lucide-react";
+import { services } from "@/data/services";
 
-const services = [
-  {
-    number: "01",
-    title: "Private Tours",
-    description:
-      "Custom-made private tours designed around your interests, schedule and preferred pace.",
-    image: "/images/services/private-tours.jpg",
-    icon: Route,
-    href: "/services/private-tours",
-  },
-  {
-    number: "02",
-    title: "Car with Driver",
-    description:
-      "Travel comfortably with an experienced local driver who knows the roads and the best routes.",
-    image: "/images/services/car-driver.jpg",
-    icon: Car,
-    href: "/services/car-with-driver",
-  },
-  {
-    number: "03",
-    title: "Local Guides",
-    description:
-      "Discover the stories behind each destination with friendly and knowledgeable local guides.",
-    image: "/images/services/local-guide.jpg",
-    icon: UserRound,
-    href: "/services/local-guides",
-  },
-  {
-    number: "04",
-    title: "Translator & Assistance",
-    description:
-      "Language support and local assistance to help you communicate and travel with confidence.",
-    image: "/images/services/translator.jpg",
-    icon: Languages,
-    href: "/services/translator-assistance",
-  },
-  {
-    number: "05",
-    title: "Car Rental",
-    description:
-      "Flexible car rental options for travelers who prefer the freedom to explore independently.",
-    image: "/images/services/car-rental.jpg",
-    icon: Car,
-    href: "/services/car-rental",
-  },
-  {
-    number: "06",
-    title: "Custom Itineraries",
-    description:
-      "Personalized itineraries created around your interests, available time and travel style.",
-    image: "/images/services/custom-itinerary.jpg",
-    icon: Map,
-    href: "/services/custom-itineraries",
-  },
-];
+const serviceIcons = {
+  "private-tours": Route,
+  "car-with-driver": Car,
+  "local-guides": UserRound,
+  "translator-assistance": Languages,
+  "car-rental": Car,
+  "custom-itineraries": Map,
+};
 
 export default function ServicesPage() {
   return (
     <main className="bg-[#fbfcf8]">
-      {/* ========================================
-          HERO
-      ========================================= */}
+      {/* HERO */}
 
       <section className="relative min-h-[68svh] overflow-hidden">
         <img
@@ -80,7 +31,6 @@ export default function ServicesPage() {
           className="absolute inset-0 h-full w-full object-cover"
         />
 
-        {/* Same natural gradient direction as homepage */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/65 via-black/30 to-black/5" />
 
         <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent" />
@@ -113,13 +63,11 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* ========================================
-          SERVICES
-      ========================================= */}
+      {/* SERVICES */}
 
       <section className="py-16 md:py-20">
         <div className="mx-auto max-w-[1540px] px-6 md:px-10 lg:px-16">
-          {/* SECTION HEADER */}
+          {/* HEADER */}
 
           <div className="mb-10 text-center">
             <div className="flex items-center justify-center gap-3">
@@ -142,17 +90,18 @@ export default function ServicesPage() {
             </p>
           </div>
 
-          {/* ========================================
-              CARD GRID
-          ========================================= */}
+          {/* CARDS */}
 
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {services.map((service) => {
-              const Icon = service.icon;
+              const Icon =
+                serviceIcons[
+                  service.slug as keyof typeof serviceIcons
+                ];
 
               return (
                 <Link
-                  key={service.number}
+                  key={service.slug}
                   href={service.href}
                   className="group flex h-full flex-col overflow-hidden rounded-[20px] border border-black/[0.07] bg-white transition-all duration-300 hover:-translate-y-1 hover:border-[#90EE90]/80 hover:shadow-[0_16px_40px_rgba(26,80,26,0.10)]"
                 >
@@ -165,11 +114,7 @@ export default function ServicesPage() {
                       className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.05]"
                     />
 
-                    {/* Light bottom gradient */}
-
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
-
-                    {/* ICON */}
 
                     <div className="absolute left-4 top-4 flex h-10 w-10 items-center justify-center rounded-full border border-white/60 bg-white/90 text-[#008000] shadow-sm backdrop-blur-sm">
                       <Icon size={17} strokeWidth={1.8} />
@@ -179,25 +124,17 @@ export default function ServicesPage() {
                   {/* CONTENT */}
 
                   <div className="flex flex-1 flex-col p-5">
-                    {/* NUMBER */}
-
                     <span className="text-[9px] font-semibold tracking-[0.2em] text-[#70b870]">
                       {service.number}
                     </span>
-
-                    {/* TITLE */}
 
                     <h3 className="mt-2 text-[20px] font-semibold tracking-[-0.035em] text-[#182018] transition-colors duration-300 group-hover:text-[#008000]">
                       {service.title}
                     </h3>
 
-                    {/* DESCRIPTION */}
-
                     <p className="mt-3 text-[12px] leading-[1.75] text-black/50">
                       {service.description}
                     </p>
-
-                    {/* LEARN MORE */}
 
                     <div className="mt-auto pt-6">
                       <div className="flex items-center justify-between border-t border-black/[0.06] pt-4">
@@ -221,9 +158,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* ========================================
-          WHATSAPP CTA
-      ========================================= */}
+      {/* WHATSAPP CTA */}
 
       <section className="pb-20 md:pb-24">
         <div className="mx-auto max-w-[1540px] px-6 md:px-10 lg:px-16">

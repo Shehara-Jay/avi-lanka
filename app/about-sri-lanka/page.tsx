@@ -9,38 +9,9 @@ import {
   Sun,
 } from "lucide-react";
 
-const destinations = [
-  {
-    name: "Sigiriya",
-    region: "Cultural Triangle",
-    image: "/images/about-sri-lanka/sigiriya.jpg",
-  },
-  {
-    name: "Ella",
-    region: "Hill Country",
-    image: "/images/about-sri-lanka/ella.jpg",
-  },
-  {
-    name: "Kandy",
-    region: "Central Province",
-    image: "/images/about-sri-lanka/kandy.jpg",
-  },
-  {
-    name: "Yala",
-    region: "Southern Sri Lanka",
-    image: "/images/about-sri-lanka/yala.jpg",
-  },
-  {
-    name: "Galle",
-    region: "South Coast",
-    image: "/images/about-sri-lanka/galle.jpg",
-  },
-  {
-    name: "Nuwara Eliya",
-    region: "Central Highlands",
-    image: "/images/about-sri-lanka/nuwara-eliya.jpg",
-  },
-];
+import { getFeaturedDestinations } from "@/data/destinations";
+
+const destinations = getFeaturedDestinations();
 
 const highlights = [
   {
@@ -70,7 +41,9 @@ const travelTips = [
 export default function AboutSriLankaPage() {
   return (
     <main className="bg-[#fbfcf8]">
-      {/* HERO */}
+      {/* ========================================
+          HERO
+      ========================================= */}
 
       <section className="relative min-h-[90svh] overflow-hidden">
         <img
@@ -109,9 +82,11 @@ export default function AboutSriLankaPage() {
         </div>
       </section>
 
-      {/* INTRO */}
+      {/* ========================================
+          INTRO
+      ========================================= */}
 
-      <section className="py-18 md:py-24">
+      <section className="py-20 md:py-24">
         <div className="mx-auto grid max-w-[1540px] gap-10 px-6 md:px-10 lg:grid-cols-[0.9fr_1.1fr] lg:px-16">
           <div>
             <p className="text-[9px] font-semibold uppercase tracking-[0.3em] text-[#008000]">
@@ -145,7 +120,9 @@ export default function AboutSriLankaPage() {
         </div>
       </section>
 
-      {/* DESTINATIONS */}
+      {/* ========================================
+          DESTINATIONS
+      ========================================= */}
 
       <section className="pb-20 md:pb-24">
         <div className="mx-auto max-w-[1540px] px-6 md:px-10 lg:px-16">
@@ -162,6 +139,7 @@ export default function AboutSriLankaPage() {
               <h2 className="text-[clamp(2.5rem,4vw,4.4rem)] font-semibold leading-[0.96] tracking-[-0.05em] text-[#182018]">
                 See Sri Lanka,
                 <br />
+
                 <span className="font-medium italic text-[#008000]">
                   one place at a time.
                 </span>
@@ -176,8 +154,9 @@ export default function AboutSriLankaPage() {
 
           <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
             {destinations.map((destination) => (
-              <article
-                key={destination.name}
+              <Link
+                key={destination.slug}
+                href={destination.href}
                 className="group overflow-hidden rounded-[24px] border border-black/[0.07] bg-white transition-all duration-300 hover:-translate-y-1 hover:border-[#90EE90] hover:shadow-[0_18px_40px_rgba(40,90,40,0.10)]"
               >
                 <div className="relative aspect-[4/3] overflow-hidden">
@@ -187,11 +166,12 @@ export default function AboutSriLankaPage() {
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.06]"
                   />
 
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/5 to-transparent" />
 
                   <div className="absolute bottom-5 left-5 right-5">
-                    <div className="flex items-center gap-2 text-white/60">
+                    <div className="flex items-center gap-2 text-white/65">
                       <MapPin size={11} />
+
                       <span className="text-[8px] uppercase tracking-[0.25em]">
                         {destination.region}
                       </span>
@@ -200,15 +180,32 @@ export default function AboutSriLankaPage() {
                     <h3 className="mt-2 text-[1.8rem] font-medium tracking-[-0.04em] text-white">
                       {destination.name}
                     </h3>
+
+                    <p className="mt-2 line-clamp-2 max-w-[350px] text-[10px] leading-5 text-white/60">
+                      {destination.shortDescription}
+                    </p>
+
+                    <div className="mt-3 flex items-center gap-2 text-[#BDF5B5]">
+                      <span className="text-[8px] font-semibold uppercase tracking-[0.2em]">
+                        Explore
+                      </span>
+
+                      <ArrowUpRight
+                        size={11}
+                        className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
+                      />
+                    </div>
                   </div>
                 </div>
-              </article>
+              </Link>
             ))}
           </div>
         </div>
       </section>
 
-      {/* WHAT MAKES SRI LANKA SPECIAL */}
+      {/* ========================================
+          WHAT MAKES SRI LANKA SPECIAL
+      ========================================= */}
 
       <section className="bg-[#102719] py-20 text-white md:py-24">
         <div className="mx-auto max-w-[1540px] px-6 md:px-10 lg:px-16">
@@ -254,7 +251,9 @@ export default function AboutSriLankaPage() {
         </div>
       </section>
 
-      {/* BEST TIME */}
+      {/* ========================================
+          BEST TIME
+      ========================================= */}
 
       <section className="py-20 md:py-24">
         <div className="mx-auto grid max-w-[1540px] gap-8 px-6 md:px-10 lg:grid-cols-[0.85fr_1.15fr] lg:px-16">
@@ -312,7 +311,9 @@ export default function AboutSriLankaPage() {
         </div>
       </section>
 
-      {/* THINGS TO KNOW */}
+      {/* ========================================
+          THINGS TO KNOW
+      ========================================= */}
 
       <section className="pb-20 md:pb-24">
         <div className="mx-auto max-w-[1540px] px-6 md:px-10 lg:px-16">
@@ -358,7 +359,9 @@ export default function AboutSriLankaPage() {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* ========================================
+          CTA
+      ========================================= */}
 
       <section className="pb-20 md:pb-24">
         <div className="mx-auto max-w-[1540px] px-6 md:px-10 lg:px-16">

@@ -7,88 +7,7 @@ import {
   Mountain,
 } from "lucide-react";
 
-const tours = [
-  {
-    number: "01",
-    title: "Sigiriya & Dambulla",
-    location: "Cultural Triangle",
-    duration: "Full Day",
-    description:
-      "Discover the ancient Sigiriya Rock Fortress and the remarkable cave temples of Dambulla on a journey through Sri Lanka's cultural heart.",
-    image: "/images/tours/sigiriya-dambulla.jpg",
-    href: "/tours/sigiriya-dambulla",
-  },
-  {
-    number: "02",
-    title: "Kandy & Cultural Heritage",
-    location: "Central Sri Lanka",
-    duration: "Full Day",
-    description:
-      "Explore Kandy, its cultural traditions, scenic surroundings and some of the most important heritage sites in central Sri Lanka.",
-    image: "/images/tours/kandy.jpg",
-    href: "/tours/kandy",
-  },
-  {
-    number: "03",
-    title: "Ella & Hill Country",
-    location: "Hill Country",
-    duration: "1–2 Days",
-    description:
-      "Experience mountain scenery, tea country, waterfalls and some of Sri Lanka's most memorable viewpoints around Ella.",
-    image: "/images/tours/ella.jpg",
-    href: "/tours/ella-hill-country",
-  },
-  {
-    number: "04",
-    title: "Yala Wildlife Safari",
-    location: "Yala National Park",
-    duration: "Half / Full Day",
-    description:
-      "Travel into Yala National Park on a wildlife safari in search of elephants, leopards and Sri Lanka's remarkable birdlife.",
-    image: "/images/tours/yala.jpg",
-    href: "/tours/yala-safari",
-  },
-  {
-    number: "05",
-    title: "Galle & South Coast",
-    location: "Southern Sri Lanka",
-    duration: "Full Day",
-    description:
-      "Explore historic Galle Fort, tropical coastline and relaxed southern destinations on a flexible private excursion.",
-    image: "/images/tours/galle.jpg",
-    href: "/tours/galle-south-coast",
-  },
-  {
-    number: "06",
-    title: "Cultural Triangle",
-    location: "Central North",
-    duration: "2–4 Days",
-    description:
-      "Journey through Sri Lanka's ancient cities, sacred sites and historic landscapes with an itinerary shaped around your available time.",
-    image: "/images/tours/cultural-triangle.jpg",
-    href: "/tours/cultural-triangle",
-  },
-  {
-    number: "07",
-    title: "Nuwara Eliya & Tea Country",
-    location: "Central Highlands",
-    duration: "Full Day",
-    description:
-      "Travel through cool mountain landscapes, tea estates and colonial-era Nuwara Eliya in the heart of Sri Lanka's highlands.",
-    image: "/images/tours/nuwara-eliya.jpg",
-    href: "/tours/nuwara-eliya",
-  },
-  {
-    number: "08",
-    title: "Mirissa & Southern Coast",
-    location: "South Coast",
-    duration: "Full Day",
-    description:
-      "Enjoy tropical beaches, coastal scenery and the relaxed atmosphere of Sri Lanka's beautiful southern coastline.",
-    image: "/images/tours/mirissa.jpg",
-    href: "/tours/mirissa",
-  },
-];
+import { tours } from "@/data/tours";
 
 const categories = [
   "All tours",
@@ -209,7 +128,7 @@ export default function ToursPage() {
           <div className="grid gap-x-5 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">
             {tours.map((tour) => (
               <Link
-                key={tour.number}
+                key={tour.slug}
                 href={tour.href}
                 className="group flex h-full flex-col"
               >
@@ -240,7 +159,7 @@ export default function ToursPage() {
                   </span>
                 </div>
 
-                {/* CARD INFORMATION */}
+                {/* INFORMATION */}
 
                 <div className="flex flex-1 flex-col pt-4">
                   <div className="flex flex-wrap items-center gap-x-4 gap-y-2">

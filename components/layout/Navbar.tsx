@@ -19,6 +19,10 @@ const navItems = [
     href: "/tours",
   },
   {
+    label: "Activities",
+    href: "/activities",
+  },
+  {
     label: "About Us",
     href: "/about",
   },
@@ -35,8 +39,7 @@ const socialItems = [
     icon: FaTelegramPlane,
     hoverColor: "hover:bg-[#229ED9]",
     hoverBorder: "hover:border-[#229ED9]",
-    hoverShadow:
-      "hover:shadow-[0_8px_20px_rgba(34,158,217,0.25)]",
+    hoverShadow: "hover:shadow-[0_8px_20px_rgba(34,158,217,0.25)]",
   },
   {
     label: "WhatsApp",
@@ -44,8 +47,7 @@ const socialItems = [
     icon: FaWhatsapp,
     hoverColor: "hover:bg-[#25D366]",
     hoverBorder: "hover:border-[#25D366]",
-    hoverShadow:
-      "hover:shadow-[0_8px_20px_rgba(37,211,102,0.25)]",
+    hoverShadow: "hover:shadow-[0_8px_20px_rgba(37,211,102,0.25)]",
   },
   {
     label: "Call Avi Lanka",
@@ -53,8 +55,7 @@ const socialItems = [
     icon: Phone,
     hoverColor: "hover:bg-[#3B82F6]",
     hoverBorder: "hover:border-[#3B82F6]",
-    hoverShadow:
-      "hover:shadow-[0_8px_20px_rgba(59,130,246,0.25)]",
+    hoverShadow: "hover:shadow-[0_8px_20px_rgba(59,130,246,0.25)]",
   },
 ];
 
@@ -168,54 +169,52 @@ export default function Navbar() {
               DESKTOP NAVIGATION
           ================================= */}
 
-          <nav className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-6 xl:flex">
+          <nav className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-5 xl:flex">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 className="
-                  group
-                  relative
-                  whitespace-nowrap
-                  py-3
-                  text-[12px]
-                  font-semibold
-                  text-[#008000]
-                  transition-colors
-                  duration-300
-                  hover:text-[#006400]
-                "
+        group
+        relative
+        whitespace-nowrap
+        py-3
+        text-[13px]
+        font-semibold
+        text-[#008000]
+        transition-colors
+        duration-300
+        hover:text-[#006400]
+      "
               >
                 <span
                   className="
-                    inline-block
-                    origin-center
-                    transition-transform
-                    duration-300
-                    ease-out
-                    group-hover:scale-[1.05]
-                  "
+          inline-block
+          origin-center
+          transition-transform
+          duration-300
+          ease-out
+          group-hover:scale-[1.05]
+        "
                 >
                   {item.label}
                 </span>
 
-                {/* LIGHT GREEN HOVER UNDERLINE */}
-
                 <span
                   className="
-                    absolute
-                    bottom-[7px]
-                    left-0
-                    h-[1.5px]
-                    w-full
-                    origin-left
-                    scale-x-0
-                    bg-[#90EE90]
-                    transition-transform
-                    duration-300
-                    ease-out
-                    group-hover:scale-x-100
-                  "
+          absolute
+          bottom-[7px]
+          left-0
+          h-[1.5px]
+          w-full
+          origin-left
+          scale-x-0
+          bg-[#90EE90]
+          transition-transform
+          duration-300
+          ease-out
+          group-hover:scale-x-100
+        "
                 />
               </Link>
             ))}
@@ -235,16 +234,8 @@ export default function Navbar() {
                   href={item.href}
                   aria-label={item.label}
                   title={item.label}
-                  target={
-                    item.href.startsWith("http")
-                      ? "_blank"
-                      : undefined
-                  }
-                  rel={
-                    item.href.startsWith("http")
-                      ? "noreferrer"
-                      : undefined
-                  }
+                  target={item.href.startsWith("http") ? "_blank" : undefined}
+                  rel={item.href.startsWith("http") ? "noreferrer" : undefined}
                   className={`
                     group
                     flex
@@ -399,7 +390,7 @@ export default function Navbar() {
                 </span>
 
                 <span className="text-[8px] tracking-[0.2em] text-[#008000]/45">
-                  0{index + 1}
+                  {String(index + 1).padStart(2, "0")}
                 </span>
               </Link>
             ))}
